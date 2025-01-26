@@ -78,10 +78,6 @@ def get_random_car_data():
             "condition": random.choice(conditions),
             "brand": brand,
             "preview_image": "/cars/preview/bmw.jpg",
-            "images": [
-                "/cars/preview/20250118_133325.jpg",
-                "/cars/preview/20250118_133325.jpg",
-            ]
         }
         car_data.append(car)
 
@@ -116,7 +112,7 @@ def car(request):
     if not car:
         messages.warning(request, "Car not found. Please browse through others.")
         return redirect('cars')
-    return render(request, 'car.html', {'car': car})
+    return HttpResponseRedirect(car.postUrl)
 
 def developer(request):
     return HttpResponseRedirect('https://www.instagram.com/devfemibadmus/')

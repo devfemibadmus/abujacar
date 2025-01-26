@@ -1,13 +1,5 @@
 from django.db import models
 
-class Image(models.Model):
-    image = models.ImageField(upload_to="images/")
-    car = models.ForeignKey('Car', related_name='images', on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name = "car image"
-        verbose_name_plural = "Car Images (Min 2, Max 15)"
-
 class Car(models.Model):
     CAR_TYPE_CHOICES = [
         ('SUV', 'SUV'),

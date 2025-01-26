@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from django.utils.html import format_html
 from django.contrib.auth.models import Group
-from .models import Image, Car, About, SocialMedia, FeaturePost
+from .models import Car, About, SocialMedia, FeaturePost
 
 
 @admin.register(About)
@@ -97,19 +97,12 @@ class CarForm(forms.ModelForm):
             self.add_error(None, 'A car with these details already exists.')
         return cleaned_data
 
-class ImageInline(admin.TabularInline):
-    model = Image
-    extra = 0
-    min_num = 2
-    max_num = 15
-    can_delete = True
     
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
     list_display = ('name', 'year', 'type', 'variant', 'brand', 'condition', 'color')
     list_filter = ('type', 'condition', 'year')
     search_fields = ('make__name', 'year')
-    inlines = [ImageInline]
     form = CarForm
     
 
