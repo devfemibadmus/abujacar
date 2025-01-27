@@ -1,81 +1,7 @@
+from .models import Car
 from django import forms
 from django.contrib import admin
-from django.utils.html import format_html
 from django.contrib.auth.models import Group
-from .models import Car, About, SocialMedia, FeaturePost
-
-
-@admin.register(About)
-class AboutAdmin(admin.ModelAdmin):
-    list_display = ('model_name', 'name', 'email', 'address', 'intro')
-    search_fields = ('name', 'email', 'address')
-    fields = ('name', 'intro', 'email', 'address')
-
-    def has_add_permission(self, request):
-        return self.model.objects.count() == 0
-    
-    def model_name(self, obj):
-        return "Edit about"
-
-@admin.register(SocialMedia)
-class SocialMediaAdmin(admin.ModelAdmin):
-    list_display = ('model_name', 'tiktok_link', 'facebook_link', 'instagram_link', 'youtube_link', 'twitter_link')
-    search_fields = ('tiktok', 'facebook', 'instagram', 'youtube', 'twitter')
-    fields = ('tiktok', 'facebook', 'instagram', 'youtube', 'twitter')
-
-    def has_add_permission(self, request):
-        return self.model.objects.count() == 0
-
-    def model_name(self, obj):
-        return "Edit links"
-
-    def extract_username(self, url):
-        if not url:
-            return ""
-        if url.endswith('/'):
-            url = url[:-1]
-        return url.split('/')[-1] if url else ""
-
-    def tiktok_link(self, obj):
-        username = self.extract_username(obj.tiktok)
-        return format_html('<a href="{}" target="_blank">{}</a>', obj.tiktok, username)
-
-    def facebook_link(self, obj):
-        username = self.extract_username(obj.facebook)
-        return format_html('<a href="{}" target="_blank">{}</a>', obj.facebook, username)
-
-    def instagram_link(self, obj):
-        username = self.extract_username(obj.instagram)
-        return format_html('<a href="{}" target="_blank">{}</a>', obj.instagram, username)
-
-    def youtube_link(self, obj):
-        username = self.extract_username(obj.youtube)
-        return format_html('<a href="{}" target="_blank">{}</a>', obj.youtube, username)
-
-    def twitter_link(self, obj):
-        username = self.extract_username(obj.twitter)
-        return format_html('<a href="{}" target="_blank">{}</a>', obj.twitter, username)
-
-@admin.register(FeaturePost)
-class FeaturePostAdmin(admin.ModelAdmin):
-    list_display = ('model_name', 'post1_link', 'post2_link', 'post3_link')
-    search_fields = ('post1', 'post2', 'post3')
-    fields = ('post1', 'post2', 'post3')
-
-    def has_add_permission(self, request):
-        return self.model.objects.count() == 0
-
-    def model_name(self, obj):
-        return "Edit link"
-
-    def post1_link(self, obj):
-        return format_html(f'<a href="{obj.post1}" target="_blank">{obj.post1}</a>') if obj.post1 else ""
-
-    def post2_link(self, obj):
-        return format_html(f'<a href="{obj.post2}" target="_blank">{obj.post2}</a>') if obj.post2 else ""
-
-    def post3_link(self, obj):
-        return format_html(f'<a href="{obj.post3}" target="_blank">{obj.post3}</a>') if obj.post3 else ""
 
 class CarForm(forms.ModelForm):
     class Meta:
@@ -96,14 +22,21 @@ class CarForm(forms.ModelForm):
         if not self.instance.pk and car.exists():
             self.add_error(None, 'A car with these details already exists.')
         return cleaned_data
-
     
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year', 'type', 'variant', 'brand', 'condition', 'color')
+    list_display = ('name', 'year', 'type', 'condition', 'color')
     list_filter = ('type', 'condition', 'year')
-    search_fields = ('make__name', 'year')
+    search_fields = ('name', 'year', 'brand')
     form = CarForm
+    fieldsets = (
+        ("Car Details", {
+            'fields': ('name', 'year', 'amount', 'mileage', 'postUrl', 'preview_image')
+        }),
+        ("Car Information (used on the website when searching for a car)", {
+            'fields': ('variant', 'color', 'type', 'brand')
+        }),
+    )
     
 
 admin.site.unregister(Group)

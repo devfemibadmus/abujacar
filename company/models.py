@@ -81,16 +81,16 @@ class Car(models.Model):
         ('orange', 'Orange'),
         ('Brown', 'Brown'),
     ]
-    name = models.CharField(max_length=9, default="RX 350")
-    postUrl = models.CharField(max_length=150, default="https://www.instagram.com/abujacar/")
-    year = models.PositiveIntegerField(default=2010)
-    mileage = models.PositiveIntegerField(default=10000)
-    amount = models.PositiveIntegerField(default=10000)
-    color = models.CharField(max_length=20, choices=CAR_COLORS_CHOICES, default='black')
-    variant = models.CharField(max_length=20, choices=CAR_VARIANT_CHOICES, default='Luxury')
-    type = models.CharField(max_length=20, choices=CAR_TYPE_CHOICES, default='SUV')
-    condition = models.CharField(max_length=20, choices=CAR_CONDITION_CHOICES, default='USED')
-    brand = models.CharField(max_length=20, choices=CAR_BRANDS_CHOICES, default='lexus')
+    name = models.CharField(max_length=9)
+    postUrl = models.URLField(max_length=200)
+    year = models.PositiveIntegerField()
+    mileage = models.PositiveIntegerField()
+    amount = models.PositiveIntegerField()
+    color = models.CharField(max_length=20, choices=CAR_COLORS_CHOICES)
+    variant = models.CharField(max_length=200, default='Luxury ', help_text="Enter all related separated by a space. E.g., 'Standard Luxury Sports Electric Hybrid Diesel'")
+    type = models.CharField(max_length=20, choices=CAR_TYPE_CHOICES)
+    condition = models.CharField(max_length=20, choices=CAR_CONDITION_CHOICES)
+    brand = models.CharField(max_length=20, choices=CAR_BRANDS_CHOICES)
     preview_image = models.ImageField(upload_to="preview/")
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -101,28 +101,4 @@ class Car(models.Model):
         ordering = ['-updated_at']
         verbose_name = "Car"
         verbose_name_plural = "Cars"
-
-class About(models.Model):
-    name = models.CharField(max_length=50)
-    intro = models.CharField(max_length=255)
-    email = models.EmailField()
-    address = models.CharField(max_length=255)
-    def __str__(self):
-        return self.name
-
-class SocialMedia(models.Model):
-    tiktok = models.URLField(blank=True, null=True)
-    facebook = models.URLField(blank=True, null=True)
-    instagram = models.URLField(blank=True, null=True)
-    youtube = models.URLField(blank=True, null=True)
-    twitter = models.URLField(blank=True, null=True)
-    def __str__(self):
-        return "Social Media Links"
-
-class FeaturePost(models.Model):
-    post1 = models.URLField(blank=True, null=True)
-    post2 = models.URLField(blank=True, null=True)
-    post3 = models.URLField(blank=True, null=True)
-    def __str__(self):
-        return "Feature Posts"
 
