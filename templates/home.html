@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        <section class="relative h-[70vh]" id="hero">
+            <div class="absolute inset-0 bg-black opacity-20 z-10"></div>
+            <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop muted>
+                <source src="/static/images/abujacar.mp4" type="video/mp4" />
+            </video>
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative z-20">
+                <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2 h-full">
+                    <div>
+                        <p class="mt-4 text-base text-white lg:mt-8 sm:text-xl">#1 Luxury cars in Nigeria</p>
+                        <a href="/cars" title="" class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-gray-300 rounded-full lg:mt-16 hover:bg-gray-400 focus:bg-gray-400" role="button">
+                            Explore all cars
+                            <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gradient-to-r from-white-200 to-gray-200" id="reviews">
+            <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 px-4 py-9">
+                <div class="relative md:flex justify-center items-center">
+                    <div class="md:w-4/12 w-full">
+                        <div class="flex space-x-2 md:mt-0 mt-10">
+                            <svg class="cursor-pointer text-gray-800" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.0962 18.2498C14.9496 18.2504 14.805 18.2158 14.6745 18.149L9.99954 15.7015L5.32454 18.149C5.17273 18.2288 5.00157 18.2644 4.83052 18.2518C4.65947 18.2392 4.49539 18.1789 4.35693 18.0776C4.21847 17.9764 4.11118 17.8384 4.04727 17.6792C3.98335 17.5201 3.96537 17.3462 3.99537 17.1773L4.91204 12.0164L1.13537 8.34978C1.01754 8.2322 0.933954 8.08475 0.89358 7.92325C0.853207 7.76176 0.857571 7.59232 0.906205 7.43312C0.959335 7.2702 1.05707 7.12544 1.18831 7.01526C1.31955 6.90508 1.47905 6.8339 1.6487 6.80978L6.8737 6.04895L9.17454 1.34645C9.2496 1.19146 9.3668 1.06076 9.51271 0.969306C9.65862 0.877851 9.82734 0.829346 9.99954 0.829346C10.1717 0.829346 10.3405 0.877851 10.4864 0.969306C10.6323 1.06076 10.7495 1.19146 10.8245 1.34645L13.1529 6.03978L18.3779 6.80062C18.5475 6.82473 18.707 6.89591 18.8383 7.00609C18.9695 7.11627 19.0672 7.26103 19.1204 7.42395C19.169 7.58315 19.1734 7.75259 19.133 7.91408C19.0926 8.07558 19.009 8.22303 18.8912 8.34062L15.1145 12.0073L16.0312 17.1681C16.0639 17.34 16.0468 17.5176 15.9818 17.68C15.9169 17.8425 15.8068 17.9829 15.6645 18.0848C15.4985 18.2011 15.2987 18.2591 15.0962 18.2498Z" fill="currentColor" />
+                            </svg>
+                            <svg class="cursor-pointer text-gray-800" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.0962 18.2498C14.9496 18.2504 14.805 18.2158 14.6745 18.149L9.99954 15.7015L5.32454 18.149C5.17273 18.2288 5.00157 18.2644 4.83052 18.2518C4.65947 18.2392 4.49539 18.1789 4.35693 18.0776C4.21847 17.9764 4.11118 17.8384 4.04727 17.6792C3.98335 17.5201 3.96537 17.3462 3.99537 17.1773L4.91204 12.0164L1.13537 8.34978C1.01754 8.2322 0.933954 8.08475 0.89358 7.92325C0.853207 7.76176 0.857571 7.59232 0.906205 7.43312C0.959335 7.2702 1.05707 7.12544 1.18831 7.01526C1.31955 6.90508 1.47905 6.8339 1.6487 6.80978L6.8737 6.04895L9.17454 1.34645C9.2496 1.19146 9.3668 1.06076 9.51271 0.969306C9.65862 0.877851 9.82734 0.829346 9.99954 0.829346C10.1717 0.829346 10.3405 0.877851 10.4864 0.969306C10.6323 1.06076 10.7495 1.19146 10.8245 1.34645L13.1529 6.03978L18.3779 6.80062C18.5475 6.82473 18.707 6.89591 18.8383 7.00609C18.9695 7.11627 19.0672 7.26103 19.1204 7.42395C19.169 7.58315 19.1734 7.75259 19.133 7.91408C19.0926 8.07558 19.009 8.22303 18.8912 8.34062L15.1145 12.0073L16.0312 17.1681C16.0639 17.34 16.0468 17.5176 15.9818 17.68C15.9169 17.8425 15.8068 17.9829 15.6645 18.0848C15.4985 18.2011 15.2987 18.2591 15.0962 18.2498Z" fill="currentColor" />
+                            </svg>
+                            <svg class="cursor-pointer text-gray-800" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.0962 18.2498C14.9496 18.2504 14.805 18.2158 14.6745 18.149L9.99954 15.7015L5.32454 18.149C5.17273 18.2288 5.00157 18.2644 4.83052 18.2518C4.65947 18.2392 4.49539 18.1789 4.35693 18.0776C4.21847 17.9764 4.11118 17.8384 4.04727 17.6792C3.98335 17.5201 3.96537 17.3462 3.99537 17.1773L4.91204 12.0164L1.13537 8.34978C1.01754 8.2322 0.933954 8.08475 0.89358 7.92325C0.853207 7.76176 0.857571 7.59232 0.906205 7.43312C0.959335 7.2702 1.05707 7.12544 1.18831 7.01526C1.31955 6.90508 1.47905 6.8339 1.6487 6.80978L6.8737 6.04895L9.17454 1.34645C9.2496 1.19146 9.3668 1.06076 9.51271 0.969306C9.65862 0.877851 9.82734 0.829346 9.99954 0.829346C10.1717 0.829346 10.3405 0.877851 10.4864 0.969306C10.6323 1.06076 10.7495 1.19146 10.8245 1.34645L13.1529 6.03978L18.3779 6.80062C18.5475 6.82473 18.707 6.89591 18.8383 7.00609C18.9695 7.11627 19.0672 7.26103 19.1204 7.42395C19.169 7.58315 19.1734 7.75259 19.133 7.91408C19.0926 8.07558 19.009 8.22303 18.8912 8.34062L15.1145 12.0073L16.0312 17.1681C16.0639 17.34 16.0468 17.5176 15.9818 17.68C15.9169 17.8425 15.8068 17.9829 15.6645 18.0848C15.4985 18.2011 15.2987 18.2591 15.0962 18.2498Z" fill="currentColor" />
+                            </svg>
+                            <svg class="cursor-pointer text-gray-800" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.0962 18.2498C14.9496 18.2504 14.805 18.2158 14.6745 18.149L9.99954 15.7015L5.32454 18.149C5.17273 18.2288 5.00157 18.2644 4.83052 18.2518C4.65947 18.2392 4.49539 18.1789 4.35693 18.0776C4.21847 17.9764 4.11118 17.8384 4.04727 17.6792C3.98335 17.5201 3.96537 17.3462 3.99537 17.1773L4.91204 12.0164L1.13537 8.34978C1.01754 8.2322 0.933954 8.08475 0.89358 7.92325C0.853207 7.76176 0.857571 7.59232 0.906205 7.43312C0.959335 7.2702 1.05707 7.12544 1.18831 7.01526C1.31955 6.90508 1.47905 6.8339 1.6487 6.80978L6.8737 6.04895L9.17454 1.34645C9.2496 1.19146 9.3668 1.06076 9.51271 0.969306C9.65862 0.877851 9.82734 0.829346 9.99954 0.829346C10.1717 0.829346 10.3405 0.877851 10.4864 0.969306C10.6323 1.06076 10.7495 1.19146 10.8245 1.34645L13.1529 6.03978L18.3779 6.80062C18.5475 6.82473 18.707 6.89591 18.8383 7.00609C18.9695 7.11627 19.0672 7.26103 19.1204 7.42395C19.169 7.58315 19.1734 7.75259 19.133 7.91408C19.0926 8.07558 19.009 8.22303 18.8912 8.34062L15.1145 12.0073L16.0312 17.1681C16.0639 17.34 16.0468 17.5176 15.9818 17.68C15.9169 17.8425 15.8068 17.9829 15.6645 18.0848C15.4985 18.2011 15.2987 18.2591 15.0962 18.2498Z" fill="currentColor" />
+                            </svg>
+                            <svg class="cursor-pointer text-gray-800" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.0962 18.2498C14.9496 18.2504 14.805 18.2158 14.6745 18.149L9.99954 15.7015L5.32454 18.149C5.17273 18.2288 5.00157 18.2644 4.83052 18.2518C4.65947 18.2392 4.49539 18.1789 4.35693 18.0776C4.21847 17.9764 4.11118 17.8384 4.04727 17.6792C3.98335 17.5201 3.96537 17.3462 3.99537 17.1773L4.91204 12.0164L1.13537 8.34978C1.01754 8.2322 0.933954 8.08475 0.89358 7.92325C0.853207 7.76176 0.857571 7.59232 0.906205 7.43312C0.959335 7.2702 1.05707 7.12544 1.18831 7.01526C1.31955 6.90508 1.47905 6.8339 1.6487 6.80978L6.8737 6.04895L9.17454 1.34645C9.2496 1.19146 9.3668 1.06076 9.51271 0.969306C9.65862 0.877851 9.82734 0.829346 9.99954 0.829346C10.1717 0.829346 10.3405 0.877851 10.4864 0.969306C10.6323 1.06076 10.7495 1.19146 10.8245 1.34645L13.1529 6.03978L18.3779 6.80062C18.5475 6.82473 18.707 6.89591 18.8383 7.00609C18.9695 7.11627 19.0672 7.26103 19.1204 7.42395C19.169 7.58315 19.1734 7.75259 19.133 7.91408C19.0926 8.07558 19.009 8.22303 18.8912 8.34062L15.1145 12.0073L16.0312 17.1681C16.0639 17.34 16.0468 17.5176 15.9818 17.68C15.9169 17.8425 15.8068 17.9829 15.6645 18.0848C15.4985 18.2011 15.2987 18.2591 15.0962 18.2498Z" fill="currentColor" />
+                            </svg>
+                            <p class="text-gray-600 text-base dark:text-gray-400 leading-4 font-normal">5/5</p>
+                        </div>
+                        <h3 class="text-gray-800 my-4 font-semibold lg:text-2xl text-xl lg:leading-6 leading-5">Nation wide</h3>
+                    </div>
+                    <div class="relative md:w-8/12 w-full overflow-x-hidden md:mt-0 mt-10">
+                        <div id="slider" class="flex justify-start items-start transition ease-out duration-700">
+                            <div class="w-full sm:w-6/12 md:w-72 flex-none p-2" id="sizeDiv">
+                                <div class="w-full">
+                                    <div class="md:w-full h-full relative">
+                                        <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top rounded-lg" src="/static/review/cubana_chiefpriest.jpg" alt="Cubana Chief Priest">
+                                        <a href="https://www.instagram.com/cubana_chiefpriest/" class="absolute bottom-0 left-0 w-full bg-black text-white text-center py-2 rounded-lg transform transition-transform duration-500 ease-in-out translate-y-0">Cubana Chief Priest</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-6/12 md:w-72 flex-none p-2">
+                                <div class="w-full">
+                                    <div class="md:w-full h-full relative">
+                                        <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top rounded-lg" src="/static/review/dantata.jpeg" alt="Dantata">
+                                        <a href="https://www.instagram.com/stories/highlights/18030317347596272/" class="absolute bottom-0 left-0 w-full bg-black text-white text-center py-2 rounded-lg transform transition-transform duration-500 ease-in-out translate-y-0">Dantata</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-6/12 md:w-72 flex-none p-2">
+                                <div class="w-full">
+                                    <div class="md:w-full h-full relative">
+                                        <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top rounded-lg" src="/static/review/innoson.jpeg" alt="Innoson Motor">
+                                        <a href="https://www.instagram.com/officialinnosonvehicles/" class="absolute bottom-0 left-0 w-full bg-black text-white text-center py-2 rounded-lg transform transition-transform duration-500 ease-in-out translate-y-0">Innoson Motor</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-6/12 md:w-72 flex-none p-2">
+                                <div class="w-full">
+                                    <div class="md:w-full h-full relative">
+                                        <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top rounded-lg" src="/static/review/olamide_badoo.jpg" alt="Olamide Badoo">
+                                        <a href="https://www.instagram.com/olamide/" class="absolute bottom-0 left-0 w-full bg-black text-white text-center py-2 rounded-lg transform transition-transform duration-500 ease-in-out translate-y-0">Olamide Badoo</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-6/12 md:w-72 flex-none p-2">
+                                <div class="w-full">
+                                    <div class="md:w-full h-full relative">
+                                        <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top rounded-lg" src="/static/review/naira_marley.jpg" alt="Naira Marley">
+                                        <a href="https://www.instagram.com/nairamarley/" class="absolute bottom-0 left-0 w-full bg-black text-white text-center py-2 rounded-lg transform transition-transform duration-500 ease-in-out translate-y-0">Naira Marley</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-6/12 md:w-72 flex-none p-2">
+                                <div class="w-full">
+                                    <div class="md:w-full h-full relative">
+                                        <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top rounded-lg" src="/static/review/pocolee.jpg" alt="Poco Lee">
+                                        <a href="https://www.instagram.com/poco_lee/" class="absolute bottom-0 left-0 w-full bg-black text-white text-center py-2 rounded-lg transform transition-transform duration-500 ease-in-out translate-y-0">Poco Lee</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-6/12 md:w-72 flex-none p-2">
+                                <div class="w-full">
+                                    <div class="md:w-full h-full relative">
+                                        <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top rounded-lg" src="/static/review/Yhemolee.jpg" alt="Yhemolee">
+                                        <a href="https://www.instagram.com/yhemo_lee/" class="absolute bottom-0 left-0 w-full bg-black text-white text-center py-2 rounded-lg transform transition-transform duration-500 ease-in-out translate-y-0">Yhemolee</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end items-end mt-10 pr-2 pb-1">
+                            <div class="flex items-center space-x-3">
+                                <button id="prev" aria-label="slide backward" class="text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31.666 20H8.33268" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M15 26.6667L8.33333 20" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M15 13.3335L8.33333 20.0002" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button id="next" aria-label="slide forward" class="text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.33398 20H31.6673" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M25 26.6667L31.6667 20" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M25 13.3335L31.6667 20.0002" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gradient-to-r from-white-200 to-gray-200" id="why_us">
+            <div class="py-10">
+                <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+                    <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">Why We Are the Best</p>
+                    <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2 bg">
+                        <div class="relative lg:row-span-2">
+                            <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
+                            <div class=" bg-gray-100 relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+                                <div class="p-2">
+                                    <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Affordable Car Ownership</p>
+                                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">At AbujaCar, we make owning your dream car easy and affordable. With a deposit as low as 20%, we help you start your journey toward the car you"ve always wanted.</p>
+                                </div>
+                                <div class="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
+                                    <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top" src="/static/images/car1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-l-[2rem]"></div>
+                        </div>
+                        <div class="relative max-lg:row-start-3">
+                            <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
+                            <div class="bg-gray-100 relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+                                <div class="p-2">
+                                    <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Global Reach, Local Impact</p>
+                                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">We import cars from across the globe, carefully selected to match your budget and preferences. Our extensive network ensures quality cars, no matter where you"re located.</p>
+                                </div>
+                                <div class="@container flex flex-1 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+                                    <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top" src="/static/images/car3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-t-[2rem]"></div>
+                        </div>
+                        <div class="relative max-lg:row-start-1 lg:col-start-2 lg:row-start-2">
+                            <div class="absolute inset-px rounded-lg bg-white"></div>
+                            <div class="bg-gray-100 relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+                                <div class="p-2">
+                                    <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Flexible Financing Options</p>
+                                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Choose from our minimal 2%-10% markup on imported cars, giving you a flexible and budget-friendly way to own your car. Tailored payment plans to suit your financial needs.</p>
+                                </div>
+                                <div class="@container flex flex-1 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+                                    <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top" src="/static/images/car2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5"></div>
+                        </div>
+                        <div class="relative lg:row-span-2">
+                            <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+                            <div class="bg-gray-100 relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+                                <div class="p-2">
+                                    <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Trusted Experience</p>
+                                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">With over 15 years in the automotive industry, AbujaCar has earned the trust of thousands of satisfied customers. Welcome to the future of automobiles in Nigeria 🇳🇬.</p>
+                                </div>
+                                <div class="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
+                                    <img class="transition-transform duration-300 transform hover:scale-110 size-full object-cover object-top" src="/static/images/car4.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white-200 text-center">
+            <a href="/cars" title="" class="inline-flex items-center px-6 py-4 mt-8 mb-8 font-semibold text-black transition-all duration-200 bg-gray-300 rounded-full hover:bg-gray-400 focus:bg-gray-400 mx-auto">
+                Explore all cars
+                <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </a>
+        </section>
+        <script src="/static/scripts/home.js"></script>
+{% endblock %}
