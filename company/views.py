@@ -14,9 +14,6 @@ def cars(request):
         Q(name__icontains=query) |
         Q(type__icontains=query) |
         Q(brand__icontains=query) |
-        Q(color__icontains=query) |
-        Q(mileage__icontains=query) |
-        Q(variant__icontains=query) |
         Q(condition__icontains=query)
     ) if query else Car.objects.all()
     # cars = get_random_car_data()

@@ -25,7 +25,7 @@ class CarForm(forms.ModelForm):
     
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('name', 'brand', 'year', 'color', 'car_mileage', 'car_amount', 'variant')
+    list_display = ('name', 'brand', 'year', 'color', 'car_mileage', 'car_amount')
     list_filter = ('type', 'condition', 'brand')
     search_fields = ('name',)
     form = CarForm
@@ -39,10 +39,10 @@ class CarAdmin(admin.ModelAdmin):
         return f"{obj.mileage} miles"
     fieldsets = (
         ("Car Details", {
-            'fields': ('brand', 'name', 'year', 'amount', 'mileage', 'postUrl', 'preview_image')
+            'fields': ('brand', 'name', 'year', 'mileage', 'postUrl', 'preview_image')
         }),
         ("Car Information (used on the website when searching for a car)", {
-            'fields': ('variant', 'color', 'type', 'condition')
+            'fields': ('amount', 'color', 'type', 'condition')
         }),
     )
     

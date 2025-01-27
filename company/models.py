@@ -13,14 +13,6 @@ class Car(models.Model):
         ('Minivan', 'Minivan'),
         ('Crossover', 'Crossover'),
     ]
-    CAR_VARIANT_CHOICES = [
-        ('Standard', 'Standard'),
-        ('Luxury', 'Luxury'),
-        ('Sports', 'Sports'),
-        ('Electric', 'Electric'),
-        ('Hybrid', 'Hybrid'),
-        ('Diesel', 'Diesel'),
-    ]
     CAR_CONDITION_CHOICES = [
         ('Brand New', 'Brand New'),
         ('Used', 'Used'),
@@ -87,7 +79,6 @@ class Car(models.Model):
     mileage = models.PositiveIntegerField()
     amount = models.PositiveIntegerField()
     color = models.CharField(max_length=20, choices=CAR_COLORS_CHOICES)
-    variant = models.CharField(max_length=200, default='Luxury ', help_text="Enter all related separated by a space. E.g., 'Standard Luxury Sports Electric Hybrid Diesel'")
     type = models.CharField(max_length=20, choices=CAR_TYPE_CHOICES)
     condition = models.CharField(max_length=20, choices=CAR_CONDITION_CHOICES)
     brand = models.CharField(max_length=20, choices=CAR_BRANDS_CHOICES)
