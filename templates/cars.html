@@ -8,19 +8,21 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {% if cars %}
             {% for car in cars %}
-            <a href="/car?name={{car.condition|replace_space}}_{{car.brand}}_{{car.name}}__{{car.id}}" class="group flex flex-col rounded-md p-6 border-gray-200 shadow-md hover:bg-gray-100 transition-all duration-1200 bg-gray-200">
-                <div class="flex items-center justify-between mb-4">
+            <a href="{{car.postUrl}}" target="_blank" class="group flex flex-col rounded-md border-gray-200 shadow-md hover:bg-gray-100 transition-all duration-1200 bg-gray-200">
+                <div class="flex items-center justify-between p-4">
                     <div>
                         <div class="flex items-center space-x-2">
                             <img class="w-6 h-6 object-contain" src="/static/brands/{{car.brand|lower|replace_space}}-logo.png" alt="Logo">
                             <h3 class="font-semibold text-lg">{{car.brand|upper}}</h3>
                         </div>
-                        <p class="text-sm text-gray-500">{{car.name}} | {{car.condition}}</p>
+                        <p class="text-xs text-gray-500 inline-block bg-gray-100 font-semibold px-2 py-1 rounded-full">{{car.name}}</p>
+                        <p class="text-xs text-gray-500 inline-block bg-gray-100 font-semibold px-2 py-1 rounded-full">{{car.condition}}</p>
+                        <p class="text-xs text-gray-500 inline-block bg-gray-100 font-semibold px-2 py-1 rounded-full">{{car.mileage|format_number}} miles</p>
                     </div>
-                    <span class="font-semibold text-xl">$115,000</span>
+                    <span class="font-semibold text-xl">{{car.amount|format_amount}}</span>
                 </div>
                 <div class="flex-grow flex items-center justify-center">
-                    <img class="object-cover w-full h-full object-bottom rounded-md max-h-[350px] hover:scale-98 ease-in duration-500" src="{{car.preview_image}}" alt="{{car.name}} ">
+                    <img class="object-cover w-full h-full object-bottom rounded-b-md max-h-[350px] hover:scale-98 ease-in duration-500" src="{{car.preview_image}}" alt="{{car.name}} ">
                 </div>
             </a>
             {% endfor %}

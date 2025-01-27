@@ -72,12 +72,14 @@ def get_random_car_data():
             "name": random.choice(car_names),
             "year": random.choice(years),
             "mileage": random.choice(mileages),
+            "amount": int(f'{random.choice(mileages)}000'),
             "color": random.choice(colors),
             "variant": random.choice(variants),
             "type": random.choice(types),
             "condition": random.choice(conditions),
             "brand": brand,
             "preview_image": "/cars/preview/bmw.jpg",
+            "postUrl": "https://www.instagram.com/p/DFP5TG2tYCj/"
         }
         car_data.append(car)
 

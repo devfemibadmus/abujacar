@@ -85,6 +85,7 @@ class Car(models.Model):
     postUrl = models.CharField(max_length=150, default="https://www.instagram.com/abujacar/")
     year = models.PositiveIntegerField(default=2010)
     mileage = models.PositiveIntegerField(default=10000)
+    amount = models.PositiveIntegerField(default=10000)
     color = models.CharField(max_length=20, choices=CAR_COLORS_CHOICES, default='black')
     variant = models.CharField(max_length=20, choices=CAR_VARIANT_CHOICES, default='Luxury')
     type = models.CharField(max_length=20, choices=CAR_TYPE_CHOICES, default='SUV')
