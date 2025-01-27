@@ -22,7 +22,7 @@
                     <span class="font-semibold text-xl">{{car.amount|format_amount}}</span>
                 </div>
                 <div class="flex-grow flex items-center justify-center">
-                    <img class="object-cover w-full h-full object-bottom rounded-b-md max-h-[350px] hover:scale-98 ease-in duration-500" src="{{car.preview_image}}" alt="{{car.name}} ">
+                    <img class="object-cover w-full h-full object-bottom rounded-b-md max-h-[350px] hover:scale-98 ease-in duration-500" src="{{car.preview_image.url}}" alt="{{car.name}} ">
                 </div>
             </a>
             {% endfor %}

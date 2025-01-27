@@ -25,16 +25,24 @@ class CarForm(forms.ModelForm):
     
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year', 'type', 'condition', 'color')
-    list_filter = ('type', 'condition', 'year')
-    search_fields = ('name', 'year', 'brand')
+    list_display = ('name', 'brand', 'year', 'color', 'car_mileage', 'car_amount', 'variant')
+    list_filter = ('type', 'condition', 'brand')
+    search_fields = ('name',)
     form = CarForm
+    def car_amount(self, obj):
+        return f'₦{obj.amount:,.0f}'
+    def car_mileage(self, obj):
+        if obj.mileage >= 1_000_000:
+            return f'{obj.mileage // 1_000_000}m miles'
+        elif obj.mileage >= 1_000:
+            return f'{obj.mileage // 1_000}k miles'
+        return f"{obj.mileage} miles"
     fieldsets = (
         ("Car Details", {
-            'fields': ('name', 'year', 'amount', 'mileage', 'postUrl', 'preview_image')
+            'fields': ('brand', 'name', 'year', 'amount', 'mileage', 'postUrl', 'preview_image')
         }),
         ("Car Information (used on the website when searching for a car)", {
-            'fields': ('variant', 'color', 'type', 'brand')
+            'fields': ('variant', 'color', 'type', 'condition')
         }),
     )
     

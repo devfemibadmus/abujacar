@@ -22,9 +22,9 @@ class Car(models.Model):
         ('Diesel', 'Diesel'),
     ]
     CAR_CONDITION_CHOICES = [
-        ('NEW', 'Brand New'),
-        ('USED', 'Used'),
-        ('FOREIGN_USED', 'Foreign Used'),
+        ('Brand New', 'Brand New'),
+        ('Used', 'Used'),
+        ('Foreign Used', 'Foreign Used'),
     ]
     CAR_BRANDS_CHOICES = [
         ('Acura', 'Acura'),
