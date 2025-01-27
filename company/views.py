@@ -1,6 +1,6 @@
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.shortcuts import render, redirect
 from django.db.models import Q
 from .models import Car
 import random
@@ -98,21 +98,6 @@ def cars(request):
     cars = get_random_car_data()
     return render(request, 'cars.html', {'cars': cars})
 
-def car(request):
-    car_id = request.GET.get('name')
-    if not car_id or "__" not in car_id:
-        messages.error(request, "Invalid Car name.")
-        return redirect('cars')
-    try:
-        car_id = int(car_id.split("__")[-1])
-    except ValueError:
-        messages.error(request, "Invalid Car name format.")
-        return redirect('cars')
-    car = Car.objects.filter(id=car_id).first()
-    if not car:
-        messages.warning(request, "Car not found. Please browse through others.")
-        return redirect('cars')
-    return HttpResponseRedirect(car.postUrl)
 
 def developer(request):
     return HttpResponseRedirect('https://www.instagram.com/devfemibadmus/')
