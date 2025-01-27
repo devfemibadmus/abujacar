@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<section class="relative py-12 min-h-[60vh]">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% if cars %}
+            {% for car in cars %}
+            <a href="/car?name={{car.condition|replace_space}}_{{car.brand}}_{{car.name}}__{{car.id}}" class="group flex flex-col rounded-md p-6 border-gray-200 shadow-md hover:bg-gray-100 transition-all duration-1200 bg-gray-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <img class="w-6 h-6 object-contain" src="/static/brands/{{car.brand|lower|replace_space}}-logo.png" alt="Logo">
+                            <h3 class="font-semibold text-lg">{{car.brand|upper}}</h3>
+                        </div>
+                        <p class="text-sm text-gray-500">{{car.name}} | {{car.condition}}</p>
+                    </div>
+                    <span class="font-semibold text-xl">$115,000</span>
+                </div>
+                <div class="flex-grow flex items-center justify-center">
+                    <img class="object-cover w-full h-full object-bottom rounded-md max-h-[350px] hover:scale-98 ease-in duration-500" src="{{car.preview_image}}" alt="{{car.name}} ">
+                </div>
+            </a>
+            {% endfor %}
+            {% else %}
+            <h1 class="text-3xl font-bold text-center">Car not found</h1>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-to-r from-white-200 to-gray-200 text-center">
+    <a href="https://www.instagram.com/stories/abujacar/" target="_blank" title="" class="inline-flex items-center px-6 py-4 mt-8 mb-8 font-semibold text-black transition-all duration-200 bg-gray-300 rounded-full hover:bg-gray-400 focus:bg-gray-400 mx-auto">
+        See more
+        <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+    </a>
+</section>  
+{% endblock %}
