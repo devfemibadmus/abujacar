@@ -48,5 +48,6 @@ class CarAdmin(admin.ModelAdmin):
     
 
 admin.site.unregister(Group)
+admin.site.site_header = "Abuja Car"
 
 
