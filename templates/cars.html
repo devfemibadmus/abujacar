@@ -22,7 +22,7 @@
                     <span class="font-semibold text-xl">{{car.amount|format_amount}}</span>
                 </div>
                 <div class="flex-grow flex items-center justify-center">
-                    <img class="object-cover w-full h-full object-bottom rounded-b-md max-h-[350px] hover:scale-98 ease-in duration-500" src="{{car.preview_image.url}}" alt="{{car.name}} ">
+                    <img class="object-cover w-full h-full object-bottom rounded-b-md max-h-[350px] hover:scale-98 ease-in duration-500" src="/{{car.preview_image.url}}" alt="{{car.name}} ">
                 </div>
             </a>
             {% endfor %}
@@ -33,8 +33,13 @@
     </div>
 </section>
 <section class="bg-gradient-to-r from-white-200 to-gray-200 text-center">
-    <a href="https://www.instagram.com/stories/abujacar/" target="_blank" title="" class="inline-flex items-center px-6 py-4 mt-8 mb-8 font-semibold text-black transition-all duration-200 bg-gray-300 rounded-full hover:bg-gray-400 focus:bg-gray-400 mx-auto">
+    {% if cars %}
+    <a href="https://www.instagram.com/stories/abujacar/" target="_blank" title="see more on instagram" class="inline-flex items-center px-6 py-4 mt-8 mb-8 font-semibold text-black transition-all duration-200 bg-gray-300 rounded-full hover:bg-gray-400 focus:bg-gray-400 mx-auto">
         See more
+        {% else %}
+        <a href="cars" title="see all cars" class="inline-flex items-center px-6 py-4 mt-8 mb-8 font-semibold text-black transition-all duration-200 bg-gray-300 rounded-full hover:bg-gray-400 focus:bg-gray-400 mx-auto">
+            See all car
+        {% endif %}
         <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
